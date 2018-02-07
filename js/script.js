@@ -14,61 +14,85 @@
 // *************************** YOUR CODE BELOW *******************************
 //******************TEST EARLY AND OFTEN USING console.log() ******************
 //****************** SERIOUSLY TEST USING console.log()!!! ******************
-
-// Songs
-var mySong = {
-	"title":"24K Magic",
-	"artist":"Bruno Mars",
-	"mp3-url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
-	"image-url":"https://images-na.ssl-images-amazon.com/images/I/71Gr9aCHQfL._SY355_.jpg",
-}
-
-var myPlayList = [
-	{
-		"title":"24K Magic",
-		"artist":"Bruno Mars",
-		"mp3-url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
-		"image-url":"https://images-na.ssl-images-amazon.com/images/I/71Gr9aCHQfL._SY355_.jpg",
-	},
-	{
-		"title":"Sir Duke",
-		"artist":"Stevie Wonder",
-		"mp3-url":"https://open.spotify.com/track/2udw7RDkldLFIPG9WYdVtT",
-		"image-url":"https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/Songs_in_the_key_of_life.jpg/220px-Songs_in_the_key_of_life.jpg",
-	},
-	{
-		"title":"Sorry",
-		"artist":"Justin Bieber",
-		"mp3-url":"https://open.spotify.com/track/09CtPGIpYB4BrO8qb1RGsF",
-		"image-url":"http://assets-s3.usmagazine.com/uploads/assets/articles/93827-justin-biebers-sorry-choreographer-spills-video-style-secrets-parris-goebel/1445638548_justin-bieber-sorry-dancers-zoom.jpg",
-	}
-
-]
-
-
-
 // DOCUMENT READY FUNCTION
-$( document ).ready(function() {
-  
+$(document).ready(function() {
+
+	// Songs
+	var mySong = {
+		title: "God's Plan",
+		artist: "Drake",
+		"mp3-url": "https://open.spotify.com/track/2XW4DbS6NddZxRPm5rMCeY",
+		"image-url": "http://www.southpawer.com/wp-content/uploads/2018/01/Drake-Scary-Hours.jpg",
+	};
+
+	var myPlayList = [
+		{
+			title: "Passionfruit",
+			artist: "Drake",
+			mp3_url: "https://open.spotify.com/track/5mCPDVBb16L4XQwDdbRUpz",
+			image_url: "https://is5-ssl.mzstatic.com/image/thumb/Music122/v4/f6/06/40/f60640a0-3486-975e-8677-3e19476c34f0/UMG_cvrart_00602557579376_01_RGB72_1800x1800_17UMGIM85032.jpg/1200x630bb.jpg",
+		},
+		{
+			title: "Fake Love",
+			artist: "Drake",
+			mp3_url: "https://open.spotify.com/track/343YBumqHu19cGoGARUTsd",
+			image_url: "https://is5-ssl.mzstatic.com/image/thumb/Music122/v4/f6/06/40/f60640a0-3486-975e-8677-3e19476c34f0/UMG_cvrart_00602557579376_01_RGB72_1800x1800_17UMGIM85032.jpg/1200x630bb.jpg",
+		},
+		{
+			title: "Madiba Riddim",
+			artist: "Drake",
+			mp3_url: "https://open.spotify.com/track/76gUmNLXGQVOsGhfcshkFP",
+			image_url: "<img> https://is5-ssl.mzstatic.com/image/thumb/Music122/v4/f6/06/40/f60640a0-3486-975e-8677-3e19476c34f0/UMG_cvrart_00602557579376_01_RGB72_1800x1800_17UMGIM85032.jpg/1200x630bb.jpg </img>",
+		}
+	];
+
+	displayList(myPlayList);
 
 
 
 });
 
-function displayList(){
+function displayList(playlist) {
 
 
-  
+	for (var i = 0; i < playlist.length; i = i + 1) {
+		var title = playlist[i].title;
+
+		var artist = playlist[i].artist;
+
+		var mp3_url = playlist[i].mp3_url;
+
+		var image_url = playlist[i].image_url;
+
+
+		$(".songs").append('<p>' + title + artist + mp3_url + image_url + '</p>');
+	}
+
 }
 
-function clearList(){
-  
-  
-  
+
+
+function clearList() {
+
+ $('.songs').empty();
+
 }
 
-function addSong(){
- 
-  
-  
+function addSong() {
+
+
+
+
 }
+
+$('button').click(function() {
+
+var title = $("title").val();
+
+var artist = $("artist").val();
+
+var mp3_url = $("mp3_url").val();
+
+var image_url = $("image_url").val();
+	
+});
